@@ -1,0 +1,183 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (c) 2021 Daylam Tayari %
+%								  %
+%  Credit to Pascal-0x90 for this  %
+% 	  Latex resume template.		  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass{article}
+\usepackage[cm]{fullpage}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\hypersetup{breaklinks=true,%
+pagecolor=white,%
+colorlinks=true,%
+linkcolor=cyan,%
+urlcolor=MyDarkBlue}
+\definecolor{MyDarkBlue}{rgb}{0,0.0,0.45}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting parameters  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\tabin}
+\setlength{\tabin}{1em}
+\newlength{\secsep}
+\setlength{\secsep}{0.1cm}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+\definecolor{contactgray}{gray}{0.2}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Template Definitions  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-6pt} \hrulefill \\ \vspace*{-15pt}}
+\newcommand{\name}[1]{\begin{center}\textsc{\Large#1}\\\end{center}}
+\newcommand{\program}[1]{\begin{center}\textsc{#1}\end{center}}
+\newcommand{\contact}[1]{\begin{center}\color{contactgray}{\normalsize#1}\end{center}}
+
+\newenvironment{tabbedsection}[1]{
+  \begin{list}{}{
+      \setlength{\itemsep}{0pt}
+      \setlength{\labelsep}{0pt}
+      \setlength{\labelwidth}{0pt}
+      \setlength{\leftmargin}{\tabin}
+      \setlength{\rightmargin}{\tabin}
+      \setlength{\listparindent}{0pt}
+      \setlength{\parsep}{0pt}
+      \setlength{\parskip}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\topsep}{#1}
+    }
+  \item[]
+}{\end{list}}
+
+\newenvironment{nospacetabbing}{
+    \begin{tabbing}
+}{\end{tabbing}\vspace{-1.2em}}
+
+\newenvironment{resume_header}{}{\vspace{0pt}}
+
+\newenvironment{resume_section}[1]{
+  \filbreak
+  \vspace{2\secsep}
+  \textsc{\large#1}
+  \lineunder
+  \begin{tabbedsection}{\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{resume_subsection}[2][]{
+  \textbf{#2} \hfill {\normalsize #1} \hspace{-5em}
+  \begin{tabbedsection}{0.5\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{subitems}{
+  \renewcommand{\labelitemi}{-}
+  \begin{itemize}
+      \setlength{\labelsep}{1em}
+}{\end{itemize}}
+
+\newenvironment{resume_employer}[4]{
+  \vspace{\secsep}
+  \textbf{#1} \\ 
+  \indent {\normalsize #2} \hfill {\normalsize #3 (#4)}
+  \begin{tabbedsection}{0pt}
+  \begin{subitems}
+}{\end{subitems}\end{tabbedsection}}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%     Document     %
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{resume_header}
+\name{Daylam Tayari}
+\contact {
+\faEnvelope[solid] \, \href{mailto:daylamtayari@tayari.gg}{daylamtayari@tayari.gg}
+\hspace{1cm} \faLinkedin \, \href{https://www.linkedin.com/in/daylam-tayari}{daylam-tayari}
+\hspace{1cm} \faGithub \, \href{https://github.com/daylamtayari}{github.com/daylamtayari}
+%\hspace{1cm} \faGlobe \, \href{https://tayari.gg}{tayari.gg}
+}
+\end{resume_header}
+
+%\begin{resume_section}{Objective}
+%Self-motivated cybersecurity student determined in providing you value, seeking an internship to obtain valuable real-world experience.
+%\end{resume_section}
+
+\begin{resume_section}{Education}
+  \begin{resume_subsection}[(August 2020 - May 2023 {[Expected]})]{Arizona State University}
+    B.S. Computer Science (Cybersecurity concentration) \hspace{5.05cm} GPA: 3.31\\*
+    %\textbf{Relevant Coursework:} Object-Oriented Programming, Computing Ethics.
+  \end{resume_subsection}
+\end{resume_section}
+
+\begin{resume_section}{Projects}
+	\begin{resume_subsection}[(February 2021)]{To-Do Export}
+  		\begin{subitems} 
+  			\item Covered a gap in the Microsoft To-Do program by devising a unique and custom solution which exports task lists into a format compatible with other task management applications.
+  			\item Programmed in Java and utilizes REST APIs to retrieve the task lists which are then converted into the corresponding CSV and JSON formats.
+  			%\item \faGithub \hspace{0.05cm} \href{https://github.com/daylamtayari/Microsoft-To-Do-Export}{https://github.com/daylamtayari/Microsoft-To-Do-Export}
+    		\end{subitems}
+  	\end{resume_subsection}
+  	\vspace{3\secsep}
+	\begin{resume_subsection}[(December 2020 - Present)]{Twitch Recover}  
+		\begin{subitems}
+    			\item Developed a software in Java which offers numerous tools to assist users in the handling of video content for a popular livestreaming platform which has acquired a total of over 20,000 users.
+    			\item Utilized REST and GraphQL APIs to retrieve and feed video content to end users.
+    			\item Resolved hundreds of user tickets, performing the relevant support and issue remediation.
+    			%\item \faGithub \hspace{0.05cm} \href{https://github.com/TwitchRecover/TwitchRecover}{https://github.com/TwitchRecover/TwitchRecover}
+		\end{subitems}
+	\end{resume_subsection}
+	\vspace{3\secsep}
+	\begin{resume_subsection}[(October - November 2020)]{Shadow Realm Bot}
+		\begin{subitems}
+			\item Created a livestreaming moderation bot offering unique intermediary banning options allowing content creators to more appropriately moderate their communities.
+			\item Developed a front end in ReactJS utilizing NodeJS packages paired with a backend composed of an SQL database and cron jobs.
+			\item Utilized OAuth Authentication for user authentication paired with API usage for data retrieval.
+		\end{subitems}
+	\end{resume_subsection}
+	\vspace{3\secsep}
+  	\begin{resume_subsection}[(March 2020 - Present)]{Home Network and Security Lab}
+  		\begin{subitems}
+  			\item Deployed numerous enterprise solutions to obtain experience in their use.
+  			\item Virtualized vulnerable environments for testing and practice purposes.
+  		\end{subitems}
+  	\end{resume_subsection}
+\end{resume_section}
+
+\vspace{3\secsep}
+
+\begin{resume_section}{Clubs}
+  	\begin{resume_subsection}[(August 2020 - Present)]{DevilSec}
+		Member of ASU's cybersecurity club which regularly hosts talks about a myriad of topics from penetration testing to network security.
+  	\end{resume_subsection}
+  	\vspace{2\secsep}
+  	\begin{resume_subsection}[(August 2020 - Present)]{ASU Esports Association}
+  		Competing at a national level with ASU's Division 1 Counter-Strike team.
+  	\end{resume_subsection}
+\end{resume_section}
+
+\vspace{3\secsep}
+
+\begin{resume_section}{Skills}
+	\begin{nospacetabbing}
+  	\textbf{Programming Languages:}  \=Java, React, JavaScript, HTML, CSS, Bash.\\*
+  	\textbf{Technologies:} \> Git, Docker, GraphQL, Nginx, VPN Solutions (OpenVPN, Wireguard \& Cisco),\\*
+  						  \> Proxmox, FTP, Github, Gitlab.\\*
+  	\textbf{Languages:} \> Native French speaker, fully bilingual in French \& English.\\*
+  	\textbf{Other:} \> NodeJS, Nmap, DirBuster, Wfuzz, Autodesk Inventor, GPG.\\*
+  \end{nospacetabbing}  
+\end{resume_section}
+
+\end{document}
