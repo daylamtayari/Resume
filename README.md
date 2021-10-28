@@ -53,5 +53,5 @@ DirBuster
 ### Miscellaneous:
 
 ![GNU/Linux Badge](https://img.shields.io/badge/GNU\/Linux-F05032?style=for-the-badge&labelColor=black&logo=linux&logoColor=white)
-![LaTex Badge](https://img.shields.io/badge/LaTex-008080?style=for-the-badge&labelColor=black&logo=LaTex&logoColor=white)
 ![Autodesk Inventor Badge](https://img.shields.io/badge/Inventor-E57000?style=for-the-badge&labelColor=black&logo=autodesk&logoColor=white) 
+![LaTex Badge](https://img.shields.io/badge/LaTex-008080?style=for-the-badge&labelColor=black&logo=LaTex&logoColor=white)
