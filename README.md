@@ -1,12 +1,12 @@
 # Welcome!
 
-**I am Daylam Tayari, a cybersecurity college student currently going to Arizona State University and currently based in Phoenix, Arizona, USA though originally from Paris, France.
-I am fully bilingual in both French (natively) and English.
+**I am Daylam Tayari, a cybersecurity college student currently going to Arizona State University and currently based in Phoenix, Arizona, USA though originally from Paris, France.**  
+**I am fully bilingual in both French (natively) and English.**  
   
-In my free time, I love working on various open source projects, enriching my cybersecurity skills and being an active participant in the Linux community.  
+**In my free time, I love working on various open source projects, enriching my cybersecurity skills and being an active participant in the Linux community.**  
   
-I am active in local group and enthusiast communities, being an active member of my universities cybersecurity club where I compete in team cybersecurity competitions with, my universities Linux User's Group where we regularly host presentation, discuss various Linux and open source topics and introduce newcomers to Linux and its various affinities.  
-I also regularly meet up with a local hacking enthusiast group, PHX2600, to discuss and attend presentations on a variety of cybersecurity and general technology topics.**
+**I am active in local group and enthusiast communities, being an active member of my universities cybersecurity club where I compete in team cybersecurity competitions with, my universities Linux User's Group where we regularly host presentation, discuss various Linux and open source topics and introduce newcomers to Linux and its various affinities.**  
+**I also regularly meet up with a local hacking enthusiast group, PHX2600, to discuss and attend presentations on a variety of cybersecurity and general technology topics.**
   
 #### Scroll down to check out my various projects and skills:
 
