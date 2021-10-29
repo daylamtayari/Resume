@@ -3,6 +3,8 @@
 <a href="https://git.tayari.gg/tayari/Resume/-/raw/master/resume.pdf?inline=true"><img src="https://img.shields.io/badge/Resume (PDF)-%23E01F3D.svg?&style=for-the-badge&logoColor=white"/></a>
 <a href="https://www.linkedin.com/in/daylamtayari"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 
+<a href="#skills"><h3>Scroll down (or click here) to check out my various projects and skills!</h3></a>
+
 **I am Daylam Tayari, a cybersecurity college student currently going to Arizona State University and currently based in Phoenix, Arizona, USA though originally from Paris, France.**  
 **I am fully bilingual in both French (natively) and English.**  
   
@@ -13,7 +15,6 @@
 **I am active in local group and enthusiast communities, being an active member of my universities cybersecurity club where I compete in team cybersecurity competitions with, my universities Linux User's Group where we regularly host presentation, discuss various Linux and open source topics and introduce newcomers to Linux and its various affinities.**  
 **I also regularly meet up with a local hacking enthusiast group, PHX2600, to discuss and attend presentations on a variety of cybersecurity and general technology topics.**
   
-### Scroll down to check out my various projects and skills:
 
 ### Feel free to reach out to me by email:
 
