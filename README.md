@@ -1,5 +1,8 @@
 # Welcome!
 
+<a href="https://git.tayari.gg/tayari/Resume/-/raw/master/resume.pdf?inline=true"><img src="https://img.shields.io/badge/Resume (PDF)-%23E01F3D.svg?&style=for-the-badge&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/daylamtayari"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+
 **I am Daylam Tayari, a cybersecurity college student currently going to Arizona State University and currently based in Phoenix, Arizona, USA though originally from Paris, France.**  
 **I am fully bilingual in both French (natively) and English.**  
   
