@@ -9,7 +9,7 @@
 
 \documentclass{article}
 \usepackage[cm]{fullpage}
-\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{fontawesome5}
 \hypersetup{breaklinks=true,%
@@ -71,13 +71,13 @@ urlcolor=MyDarkBlue}
 \newenvironment{resume_section}[1]{
   \filbreak
   \vspace{2\secsep}
-  \textsc{\large#1}
+  \textsc{\color{blue}\large#1}
   \lineunder
   \begin{tabbedsection}{\secsep}
 }{\end{tabbedsection}}
 
 \newenvironment{resume_subsection}[2][]{
-  \textbf{#2} \hfill {\normalsize #1} \hspace{-5em}
+  \textbf{\color{BlueViolet}#2} \hfill {\normalsize #1} \hspace{-5em} 
   \begin{tabbedsection}{0.5\secsep}
 }{\end{tabbedsection}}
 
@@ -126,7 +126,7 @@ urlcolor=MyDarkBlue}
   	\textbf{Languages:} \hspace{5em} \=Java, Python, C++, C, SQL, JavaScript, HTML, CSS.\\*
   	\textbf{Technologies:} \> PostgreSQL, GraphQL, Metasploit, Docker, NodeJS, Burp Suite, Proxmox.\\*
   	\textbf{Foreign Languages:} \> Native French speaker, fully bilingual in French \& English.\\*
-    \textbf{Work Authorization:} \> United States permanent resident.\\*
+    \textbf{Work Authorization:} \> United States green card holder.\\*
   	\textbf{Other:} \> Cloud services (AWS and Oracle), GNU/Linux, Bash, Git, Latex, Autodesk Inventor.\\*
   \end{nospacetabbing}  
 \end{resume_section}
