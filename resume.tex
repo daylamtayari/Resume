@@ -12,6 +12,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{fontawesome5}
+\usepackage{xifthen}
 \hypersetup{breaklinks=true,%
 pagecolor=white,%
 colorlinks=true,%
@@ -51,7 +52,7 @@ urlcolor=MyDarkBlue}
       \setlength{\itemsep}{0pt}
       \setlength{\labelsep}{0pt}
       \setlength{\labelwidth}{0pt}
-      \setlength{\leftmargin}{\tabin}
+      \setlength{\leftmargin}{0pt}
       \setlength{\rightmargin}{\tabin}
       \setlength{\listparindent}{0pt}
       \setlength{\parsep}{0pt}
@@ -88,14 +89,23 @@ urlcolor=MyDarkBlue}
       \setlength{\labelsep}{1em}
 }{\end{itemize}}
 
-\newenvironment{resume_employer}[4]{
+% If you only had a single role, put your role as the second value otherwise use the resume_position environment inside of this environment.
+% Variable 1: Company name; Variable 2: Role/title; Variable 3: Years worked.
+\newenvironment{resume_employer}[3]{
   \vspace{\secsep}
-  \textbf{#1} \\ 
-  \indent {\normalsize #2} \hfill {\normalsize #3 (#4)}
+  \textbf{\color{BlueViolet}#1} \hfill {\normalsize (#3)} \hspace{-5em}
   \begin{tabbedsection}{0pt}
-  \begin{subitems}
-}{\end{subitems}\end{tabbedsection}}
+    \ifthenelse{\isempty{#2}}%
+        {}%
+        {\textbf{#2} \\}%
+}{\end{tabbedsection}}
 
+% Variable 1: Role/title; Variable 2: Years holding that role.
+\newenvironment{resume_position}[2]{
+    \vspace{\secsep} \\
+    \textbf{#1} \hfill {\normalsize (#2)} \hspace{-2.64em}
+    \begin{subitems}
+}{\end{subitems}}
 
 %%%%%%%%%%%%%%%%%%%%
 %     Document     %
@@ -134,16 +144,6 @@ Highly driven student with experience working with a large variety of technologi
     \textbf{Work Authorization:} \> United States green card holder.\\*
   \end{nospacetabbing}  
 \end{resume_section}
-
-\vspace{2\secsep}
-\begin{resume_section}{Career}
-\begin{resume_employer}{Company A}{Role}{bdbvdfkjcds}
-    \begin{subitems}
-        \item this is a test
-    \end{subitems}
-\end{resume_employer}
-\end{resume_section}
-
 
 \vspace{2\secsep}
 
