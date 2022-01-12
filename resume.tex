@@ -76,10 +76,11 @@ urlcolor=MyDarkBlue}
   \begin{tabbedsection}{\secsep}
 }{\end{tabbedsection}}
 
-\newenvironment{resume_subsection}[2][]{
+\newenvironment{resume_subsection}[2]{
   \textbf{\color{BlueViolet}#2} \hfill {\normalsize #1} \hspace{-5em} 
   \begin{tabbedsection}{0.5\secsep}
-}{\end{tabbedsection}}
+  \begin{subitems}
+}{\end{subitems}\end{tabbedsection}}
 
 \newenvironment{subitems}{
   \renewcommand{\labelitemi}{-}
@@ -117,7 +118,7 @@ Highly driven student with experience working with a large variety of technologi
 \end{resume_section}
 
 \begin{resume_section}{Education}
-  \begin{resume_subsection}[(August 2020 - May 2023 {[Expected]})]{Arizona State University}
+  \begin{resume_subsection}{(August 2020 - May 2023 [Expected])}{Arizona State University}
     B.S. Computer Science (Cybersecurity concentration) \hspace{5.05cm} GPA: 3.31\\*
   \end{resume_subsection}
 \end{resume_section}
@@ -135,32 +136,36 @@ Highly driven student with experience working with a large variety of technologi
 \end{resume_section}
 
 \vspace{2\secsep}
+\begin{resume_section}{Career}
+\begin{resume_employer}{Company A}{Role}{bdbvdfkjcds}
+    \begin{subitems}
+        \item this is a test
+    \end{subitems}
+\end{resume_employer}
+\end{resume_section}
+
+
+\vspace{2\secsep}
 
 \begin{resume_section}{Projects}
-	\begin{resume_subsection}[(August 2021 - Present)]{Curated ICO}
-		\begin{subitems}
-            \item After identifying a need in the cryptocurrency space, developing a data aggregation and analysis platform in a coordinated team environment to assist investors in discovering new but trustworthy cryptocurrencies by detecting specific patterns and scoring them accordingly.
-            \item Designed and deployed a PostgreSQL database paired with a correlating GraphQL API in order to store large collections of financial data and allow for their \textbf{retrieval in less than 0.1ms}. 
-            \item Developed an automated data retrieval tool with a \textbf{runtime of 9.5ms} that fetches financial data on cryptocurrencies via APIs and inputs them into a database using a GraphQL API to perform historical analysis. 
-		\end{subitems}
+	\begin{resume_subsection}{(August 2021 - Present)}{Curated ICO}
+        \item After identifying a need in the cryptocurrency space, developing a data aggregation and analysis platform in a coordinated team environment to assist investors in discovering new but trustworthy cryptocurrencies by detecting specific patterns and scoring them accordingly.
+        \item Designed and deployed a PostgreSQL database paired with a correlating GraphQL API in order to store large collections of financial data and allow for their \textbf{retrieval in less than 0.1ms}. 
+        \item Developed an automated data retrieval tool with a \textbf{runtime of 9.5ms} that fetches financial data on cryptocurrencies via APIs and inputs them into a database using a GraphQL API to perform historical analysis. 
 	\end{resume_subsection}
 	\vspace{2\secsep}
-	\begin{resume_subsection}[(February 2021)]{To-Do Export - \faGitlab \hspace{0.01cm} \href{https://git.tayari.gg/tayari/Microsoft-To-Do-Export}{git.tayari.gg/tayari/Microsoft-To-Do-Export}}
-  		\begin{subitems} 
-            \item Frustrated by a total lack of any export solutions for the Microsoft To-Do program, devised and developed a custom solution that exports all task lists into a format compatible to be imported directly into other task management applications.
-  			\item Developed in Java and utilizes REST APIs to retrieve the task lists which are then converted into the appropriate CSV and JSON formats in order to ensure compatibility with other task management applications.
-    		\end{subitems}
+	\begin{resume_subsection}{(February 2021)}{To-Do Export - \faGitlab \hspace{0.01cm} \href{https://git.tayari.gg/tayari/Microsoft-To-Do-Export}{git.tayari.gg/tayari/Microsoft-To-Do-Export}}
+        \item Frustrated by a total lack of any export solutions for the Microsoft To-Do program, devised and developed a custom solution that exports all task lists into a format compatible to be imported directly into other task management applications.
+  		\item Developed in Java and utilizes REST APIs to retrieve the task lists which are then converted into the appropriate CSV and JSON formats in order to ensure compatibility with other task management applications.
   	\end{resume_subsection}
   	\vspace{2\secsep}
-	\begin{resume_subsection}[(December 2020 - Present)]{Twitch Recover - \faGithub \hspace{0.01cm} \href{https://github.com/twitchrecover/twitchrecover}{github.com/twitchrecover/twitchrecover}}  
-		\begin{subitems}
-                \item Following a copyright restriction crisis on a popular live streaming platform, developed a tool that has \textbf{over 100,000+ downloads} that allows users to better manage and recover their video content.
-    			\item Built in Java and utilizes REST and GraphQL APIs to retrieve and feed video content to end users.
-    			\item \textbf{Resolved hundreds of user tickets}, performing the relevant support and issue remediation.
-		\end{subitems}
+	\begin{resume_subsection}{(December 2020 - Present)}{Twitch Recover - \faGithub \hspace{0.01cm} \href{https://github.com/twitchrecover/twitchrecover}{github.com/twitchrecover/twitchrecover}}  
+        \item Following a copyright restriction crisis on a popular live streaming platform, developed a tool that has \textbf{over 100,000+ downloads} that allows users to better manage and recover their video content.
+    	\item Built in Java and utilizes REST and GraphQL APIs to retrieve and feed video content to end users.
+    	\item \textbf{Resolved hundreds of user tickets}, performing the relevant support and issue remediation.
 	\end{resume_subsection}
 	\vspace{2\secsep}
-%	\begin{resume_subsection}[(October - November 2020)]{Shadow Realm Bot}
+%	\begin{resume_subsection}{(October - November 2020)}{Shadow Realm Bot}
 %		\begin{subitems}
 %            \item Following the removal of a popular moderation feature, created a livestreaming moderation bot which reimplements that feature allowing content creators to better moderate their communities. 
 %			\item Developed a front end in ReactJS utilizing NodeJS packages paired with a SQL database backend.
@@ -168,31 +173,25 @@ Highly driven student with experience working with a large variety of technologi
 %    	\end{subitems}
 %	\end{resume_subsection}
 %	\vspace{2\secsep}
-  	\begin{resume_subsection}[(March 2020 - Present)]{Home Network and Security Lab}
-  		\begin{subitems}
-            \item Continuously advance my skills with enterprise tools and vulnerabilities by \textbf{virtualizing multiple vulnerable environments} and practicing to deploy and configure a large variety of enterprise tools and solutions. 
-  			\item Active on TryHackMe, an online platform with labs to practice and enrich my penetration testing skills.
-  		\end{subitems}
-  	\end{resume_subsection}
+  	\begin{resume_subsection}{(March 2020 - Present)}{Home Network and Security Lab}
+        \item Continuously advance my skills with enterprise tools and vulnerabilities by \textbf{virtualizing multiple vulnerable environments} and practicing to deploy and configure a large variety of enterprise tools and solutions. 
+  		\item Active on TryHackMe, an online platform with labs to practice and enrich my penetration testing skills.
+    \end{resume_subsection}
 \end{resume_section}
 
 \vspace{2\secsep}
 
 \begin{resume_section}{Associations}
-  	\begin{resume_subsection}[(August 2020 - Present)]{DevilSec}
-        \begin{subitems}
-		    \item Member of ASU's cybersecurity club and compete in cybersecurity team tournaments and CTFs.
-            \item Competing in the national Collegiate Cyber Defense Competition completing service requests, performing incident response, hardening Linux machines and maintaining and deploying services.
-            \item Competed in the Hivestorm blue team competition and placed in the top 46\% out of hundreds of teams.
-        \end{subitems}
+  	\begin{resume_subsection}{(August 2020 - Present)}{DevilSec}
+		\item Member of ASU's cybersecurity club and compete in cybersecurity team tournaments and CTFs.
+        \item Competing in the national Collegiate Cyber Defense Competition completing service requests, performing incident response, hardening Linux machines and maintaining and deploying services.
+        \item Competed in the Hivestorm blue team competition and placed in the top 46\% out of hundreds of teams.
   	\end{resume_subsection}
   	\vspace{2\secsep}
-  	\begin{resume_subsection}[(August 2020 - Present)]{ASU Linux User's Group (ASULUG)}
-        \begin{subitems}
-            \item Member of ASU's Linux enthusiast club which hosts talks and informs students on Linux and open source. 
-%            \item Assisted numerous students with performing tasks across a variety of Linux distributions and technologies.
-%            \item Presented a talk on the Qubes operating system explaining its unique architecture, features and uses.
-        \end{subitems}
+  	\begin{resume_subsection}{(August 2020 - Present)}{ASU Linux User's Group (ASULUG)}
+        \item Member of ASU's Linux enthusiast club which hosts talks and informs students on Linux and open source. 
+%       \item Assisted numerous students with performing tasks across a variety of Linux distributions and technologies.
+%       \item Presented a talk on the Qubes operating system explaining its unique architecture, features and uses.
   	\end{resume_subsection}
 \end{resume_section}
 \end{document}
