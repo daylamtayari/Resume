@@ -77,6 +77,7 @@ urlcolor=MyDarkBlue}
   \begin{tabbedsection}{\secsep}
 }{\end{tabbedsection}}
 
+% Variable 1: Date; Variable 2: Subsection name.
 \newenvironment{resume_subsection}[2]{
   \textbf{\color{BlueViolet}#2} \hfill {\normalsize (#1)} \hspace{-5em} 
   \begin{tabbedsection}{0.5\secsep}
@@ -97,12 +98,12 @@ urlcolor=MyDarkBlue}
   \begin{tabbedsection}{0pt}
     \ifthenelse{\isempty{#2}}%
         {}%
-        {\textbf{#2} \\}%
+        {\textbf{#2}}%
 }{\end{tabbedsection}}
 
 % Variable 1: Role/title; Variable 2: Years holding that role.
 \newenvironment{resume_position}[2]{
-    \vspace{\secsep} \\
+    \vspace{\secsep} 
     \textbf{#1} \hfill {\normalsize (#2)} \hspace{-2.64em}
     \begin{subitems}
 }{\end{subitems}}
@@ -116,30 +117,40 @@ urlcolor=MyDarkBlue}
 \begin{resume_header}
 \name{Daylam Tayari}
 \contact {
-\faEnvelope[solid] \, \href{mailto:daylamtayari@tayari.gg}{daylamtayari@tayari.gg}
-\hspace{1cm} \faLinkedin \, \href{https://www.linkedin.com/in/daylamtayari}{daylamtayari}
-\hspace{1cm} \faGitlab \, \href{https://git.tayari.gg/tayari/Resume}{git.tayari.gg/tayari}
-%\hspace{1cm} \faGlobe \, \href{https://tayari.gg}{tayari.gg}
+    \faEnvelope[solid] \, \href{mailto:daylamtayari@tayari.gg}{daylamtayari@tayari.gg}
+    \hspace{1cm} \faGlobe \, \href{https://tayari.gg}{tayari.gg}
+    \hspace{1cm} \faGitlab \, \href{https://git.tayari.gg/tayari/Resume}{git.tayari.gg/tayari}
+    \hspace{1cm} \faLinkedin \, \href{https://www.linkedin.com/in/daylamtayari}{daylamtayari}
 }
 \end{resume_header}
 
-\begin{resume_section}{Objective}
-Highly driven student with experience working with a large variety of technologies and enterprise solutions seeking a security internship.
-\end{resume_section}
+%\begin{resume_section}{Objective}
+%Highly driven student with experience working with a large variety of technologies and enterprise solutions seeking a security internship.
+%\end{resume_section}
 
 \begin{resume_section}{Education}
-  \begin{resume_subsection}{(August 2020 - May 2023 [Expected])}{Arizona State University}
+  \begin{resume_subsection}{August 2020 - May 2023 [Expected]}{Arizona State University}
     B.S. Computer Science (Cybersecurity concentration) \hspace{5.05cm} GPA: 3.31\\*
   \end{resume_subsection}
 \end{resume_section}
 
 \vspace{-3\secsep}
 
+\begin{resume_section}{Relevant Experience}
+    \begin{resume_employer}{Bishop Fox}{Incoming Security Consultant I}{May 2022}
+        \begin{subitems}
+        \item Incoming penetration tester intern at Bishop Fox starting in May 2022.
+        \end{subitems}
+    \end{resume_employer}
+\end{resume_section}
+
+\vspace{2\secsep}
+
 \begin{resume_section}{Skills}
 	\begin{nospacetabbing}
-  	\textbf{Languages:} \hspace{5em} \=Java, Python, C++, C, SQL, JavaScript, HTML, CSS.\\*
+  	\textbf{Languages:} \hspace{5em} \=Java, Python, C++, C, Go, SQL, JavaScript, HTML, CSS.\\*
   	\textbf{Technologies:} \> PostgreSQL, GraphQL, Metasploit, Docker, NodeJS, Burp Suite, Proxmox.\\*
-  	\textbf{Miscellaneous:} \> Cloud services (AWS and Oracle), GNU/Linux, Bash, Git, Latex, Autodesk Inventor.\\*
+  	\textbf{Miscellaneous:} \> Cloud services (AWS and Oracle), GNU/Linux, Bash, Git, Latex, Excel, Autodesk Inventor.\\*
   	\textbf{Foreign Languages:} \> Native French speaker, fully bilingual in French \& English.\\*
     \textbf{Work Authorization:} \> United States green card holder.\\*
   \end{nospacetabbing}  
@@ -173,25 +184,30 @@ Highly driven student with experience working with a large variety of technologi
 %    	\end{subitems}
 %	\end{resume_subsection}
 %	\vspace{2\secsep}
-  	\begin{resume_subsection}{March 2020 - Present}{Home Network and Security Lab}
-        \item Continuously advance my skills with enterprise tools and vulnerabilities by \textbf{virtualizing multiple vulnerable environments} and practicing to deploy and configure a large variety of enterprise tools and solutions. 
-  		\item Active on TryHackMe, an online platform with labs to practice and enrich my penetration testing skills.
-    \end{resume_subsection}
+%  	\begin{resume_subsection}{March 2020 - Present}{Home Network and Security Lab}
+%        \item Continuously advance my skills with enterprise tools and vulnerabilities by \textbf{virtualizing multiple vulnerable environments} and practicing to deploy and configure a large variety of enterprise tools and solutions. 
+%        \item Active on TryHackMe, an online platform with labs to practice and enrich my penetration testing skills.
+%    \end{resume_subsection}
 \end{resume_section}
 
 \vspace{2\secsep}
 
 \begin{resume_section}{Associations}
-  	\begin{resume_subsection}{August 2020 - Present}{DevilSec}
-		\item Member of ASU's cybersecurity club and compete in cybersecurity team tournaments and CTFs.
-        \item Competing in the national Collegiate Cyber Defense Competition completing service requests, performing incident response, hardening Linux machines and maintaining and deploying services.
-        \item Competed in the Hivestorm blue team competition and placed in the top 46\% out of hundreds of teams.
-  	\end{resume_subsection}
+    \begin{resume_employer}{Devilsec}{}{August 2020 - Present}
+        \begin{subitems}
+            \item Competing in the national Collegiate Cyber Defense Competition completing service requests, performing incident response, hardening Linux machines and maintaining and deploying services.
+        \end{subitems}
+
+        \begin{resume_position}{Vice-President}{2022 - Present}
+            \item Deployed and configured a CTF platform to allow the club to host CTFs and CTF based workshops.
+            \item Hosted an introduction to Linux presentation and created a corresponding CTF.
+        \end{resume_position}
+    \end{resume_employer}
   	\vspace{2\secsep}
   	\begin{resume_subsection}{August 2020 - Present}{ASU Linux User's Group (ASULUG)}
         \item Member of ASU's Linux enthusiast club which hosts talks and informs students on Linux and open source. 
-%       \item Assisted numerous students with performing tasks across a variety of Linux distributions and technologies.
-%       \item Presented a talk on the Qubes operating system explaining its unique architecture, features and uses.
+%        \item Assisted numerous students with performing tasks across a variety of Linux distributions and technologies.
+%        \item Presented a talk on the Qubes operating system explaining its unique architecture, features and uses.
   	\end{resume_subsection}
 \end{resume_section}
 \end{document}
