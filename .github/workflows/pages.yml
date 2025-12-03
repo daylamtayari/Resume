@@ -29,6 +29,34 @@ jobs:
           mkdir -p _site
           mv Daylam_Tayari_Resume.pdf _site/
 
+      - name: Create index to embed PDF
+        run: |
+          cat > _site/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <meta charset="UTF-8">
+              <title>Daylam Tayari - Resume</title>
+              <style>
+                  body, html {
+                      margin: 0;
+                      padding: 0;
+                      height: 100%;
+                      overflow: hidden;
+                  }
+                  iframe {
+                      width: 100%;
+                      height: 100%;
+                      border: none;
+                  }
+              </style>
+          </head>
+          <body>
+              <iframe src="Daylam_Tayari_Resume.pdf" type="application/pdf"></iframe>
+          </body>
+          </html>
+          EOF
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
