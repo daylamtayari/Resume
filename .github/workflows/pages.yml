@@ -24,10 +24,15 @@ jobs:
       - name: Compile LaTeX
         run: pdflatex -jobname=Daylam_Tayari_Resume resume.tex
 
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p _site
+          mv Daylam_Tayari_Resume.pdf _site/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "Daylam_Tayari_Resume.pdf"
+          path: "_site"
 
   deploy:
     needs: build
