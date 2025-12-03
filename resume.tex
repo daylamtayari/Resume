@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Copyright (c) 2021, 2022     %
+%     Copyright (c) 2021 - 2025    %
 %          Daylam Tayari           %
 %                                  %
 %  Credit to Pascal-0x90 for the   %
@@ -13,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{fontawesome5}
 \usepackage{xifthen}
+\usepackage{times}
 \hypersetup{breaklinks=true,%
 pagecolor=white,%
 colorlinks=true,%
@@ -67,8 +68,6 @@ urlcolor=MyDarkBlue}
     \begin{tabbing}
 }{\end{tabbing}\vspace{-1.2em}}
 
-\newenvironment{resume_header}{}{\vspace{0pt}}
-
 \newenvironment{resume_section}[1]{
   \filbreak
   \vspace{2\secsep}
@@ -79,7 +78,13 @@ urlcolor=MyDarkBlue}
 
 % Variable 1: Date; Variable 2: Subsection name.
 \newenvironment{resume_subsection}[2]{
-  \textbf{\color{BlueViolet}#2} \hfill {\normalsize (#1)} \hspace{-5em}
+    \textbf{#2} \hfill {\normalsize \textbf{(#1)}} \hspace{-5em}
+  \begin{tabbedsection}{0.5\secsep}
+  \begin{subitems}
+}{\end{subitems}\end{tabbedsection}}
+
+\newenvironment{resume_certification}[2]{
+    \textbf{#2} \hfill {\normalsize #1} \hspace{-5em}
   \begin{tabbedsection}{0.5\secsep}
   \begin{subitems}
 }{\end{subitems}\end{tabbedsection}}
@@ -90,11 +95,21 @@ urlcolor=MyDarkBlue}
       \setlength{\labelsep}{1em}
 }{\end{itemize}}
 
+
 % If you only had a single role, put your role as the second value otherwise use the resume_position environment inside of this environment.
 % Variable 1: Company name; Variable 2: Role/title; Variable 3: Years worked.
 \newenvironment{resume_employer}[3]{
   \vspace{\secsep}
-  \textbf{\color{BlueViolet}#1} \hfill {\normalsize (#3)} \hspace{-5em}
+  \textbf{\color{BlueViolet}#1} \hfill {\normalsize \textbf{(#3)}} \hspace{-5em}
+  \begin{tabbedsection}{0pt}
+    \ifthenelse{\isempty{#2}}%
+        {}%
+        {\textbf{#2}}%
+}{\end{tabbedsection}}
+
+\newenvironment{resume_employer_black}[3]{
+  \vspace{\secsep}
+  \textbf{#1} \hfill {\normalsize \textbf{(#3)}} \hspace{-5em}
   \begin{tabbedsection}{0pt}
     \ifthenelse{\isempty{#2}}%
         {}%
@@ -114,66 +129,82 @@ urlcolor=MyDarkBlue}
 
 \begin{document}
 
-\begin{resume_header}
 \name{Daylam Tayari}
 \contact {
     \faEnvelope[solid] \, \href{mailto:daylamtayari@tayari.gg}{daylamtayari@tayari.gg}
     \hspace{1cm} \faGlobe \, \href{https://tayari.gg}{tayari.gg}
-    \hspace{1cm} \faGitlab \, \href{https://git.tayari.gg/tayari/Resume}{git.tayari.gg/tayari}
+    \hspace{1cm} \faGithub \, \href{https://github.com/daylamtayari}{daylamtayari}
     \hspace{1cm} \faLinkedin \, \href{https://www.linkedin.com/in/daylamtayari}{daylamtayari}
 }
-\end{resume_header}
 
 %\begin{resume_section}{Objective}
 %Highly driven student with experience working with a large variety of technologies and enterprise solutions seeking a security internship.
 %\end{resume_section}
 
-\begin{resume_section}{Education}
-  \begin{resume_subsection}{August 2020 - May 2023 [Expected]}{Arizona State University}
-    B.S. Computer Science (Cybersecurity concentration) \hspace{5.05cm} GPA: 3.31\\*
-  \end{resume_subsection}
-\end{resume_section}
-
-\vspace{-3\secsep}
-
-\begin{resume_section}{Relevant Experience}
-    \begin{resume_employer}{Bishop Fox}{Incoming Security Consultant I}{May 2022}
-        \begin{subitems}
-        \item Incoming security consultant I at Bishop Fox starting in May 2022.
-        \end{subitems}
-    \end{resume_employer}
-\end{resume_section}
-
-\vspace{2\secsep}
-
 \begin{resume_section}{Skills}
     \begin{nospacetabbing}
-    \textbf{Languages:} \hspace{5em} \=Java, Python, C++, C, Go, SQL, JavaScript, TypeScript, HTML, CSS.\\*
-    \textbf{Technologies:} \> PostgreSQL, GraphQL, Docker, NodeJS, Metasploit, Burp Suite, Proxmox, TrueNAS.\\*
-    \textbf{Miscellaneous:} \> GNU/Linux, Cloud services (AWS and Oracle), Bash, Git, Latex, Excel, Autodesk Inventor.\\*
-    \textbf{Foreign Languages:} \> Native French speaker, fully bilingual in French \& English.\\*
-    \textbf{Work Authorization:} \> United States green card holder.\\*
+    \textbf{Languages:} \hspace{6.5em} \=Go, Python, Java, C++, JavaScript, SQL, HCL, Bash, HTML, CSS\\*
+    \textbf{Cloud \& Virtualisation:} \>AWS, Oracle Cloud, Terraform, Proxmox, Docker\\*
+    \textbf{Technologies:} \>Active Directory, GraphQL, MySQL, MariaDB, PostgreSQL, NodeJS, VoIP, SiP, TrueNAS\\*
+    \textbf{Tooling:} \>Burp Suite, Sliver, Nuclei, Metasploit, Ghidra, Nessus, Semgrep, CloudFox, Wireshark\\*
+    \textbf{Foreign Languages:} \>Fully bilingual in French and English\\*
+    \textbf{Work Authorization:} \>United States permanent resident\\*
   \end{nospacetabbing}
 \end{resume_section}
 
-\vspace{2\secsep}
+\vspace{0\secsep}
+
+\begin{resume_section}{Experience}
+    \begin{resume_employer}{Bishop Fox}{}{May 2022 - Present}
+        \begin{resume_position}{Security Consultant III}{February 2024 - Present}
+            \item \textbf{Technical engagement manager} for external network penetration tests, overseeing the technical work of consultants across over 6 projects, ensuring not only the proper completion of methodologies but also a holistic testing approach.
+            \item Performed \textbf{application, cloud, and network penetration tests} for a multitude of industry leading clients finding vulnerabilities that could have resulted in significant business impact and reputational harm, and was \textbf{personally requested} by multiple clients for my quality of testing and understanding of client needs.
+            \item Conducted \textbf{secure code review} of applications in \textbf{Go, Python, Java, C++, and SQL}, identifying vulnerabilities and insecure code practices as well as providing detailed remediation and mitigation instructions. 
+            \item Developed multiple tools in \textbf{Go and Python} that increased the discovery of client assets and identified functionally similar assets to reduce the effective scope, allowing for more focused testing and reduction of duplicate manual efforts.
+        \item Conducted \textbf{application penetration tests} against \textbf{numerous AWS services}, identifying vulnerabilities, and gaining detailed experience with the functioning of the services.
+        \end{resume_position}
+        \begin{resume_position}{Security Consultant II}{November 2022 - January 2024}
+                \item Conducted network and application penetration testing helping identify numerous critical and high severity issues across numerous Fortune 100 clients.
+                \item Performed source code review of Go, Python, Java, and SQL applications finding vulnerabilities such as authentication, authorization, and injection issues.
+                \item \textbf{Built a new network security service line}, working with leadership and multiple teams to provide an offering that consistently identified new vulnerabilities and provided a more comprehensive evaluation of clients' networks.
+                \item \textbf{Developed 12 tools and libraries, primarily in Go}, that optimized consultants capabilities and integrated internal solutions, resulting in more time-efficient testing.
+                \item Carried out cloud security tests in \textbf{AWS} identifying privilege escalation potentials and misconfigurations.
+        \end{resume_position}
+        \begin{resume_position}{Security Consultant I}{May 2022 - November 2022}
+            \item Independently performed external network and application penetration tests identifying vulnerabilities across major healthcare, finance, and technology companies.
+            \item Created 6 tools and scripts in Go, Python, and Bash to automate various engagement processes.
+        \end{resume_position}
+    \end{resume_employer}
+\end{resume_section}
+
+
+\vspace{-1\secsep}
+
+\begin{resume_section}{Certifications and Education}
+    \begin{nospacetabbing}
+        \textbf{Certifications:} \hspace{6.5em} \=OffSec Certified Professional (\textbf{OSCP}), AWS Certified Security - Specialty (Exp. Dec 2028)\\* %AWS Cloud Practicioner (Exp. Jan 2027)\\*
+        \textbf{Education:} \> Arizona State University (August 2020 - July 2023)\\*
+        \>Completed credits towards a B.S. in Computer Science with a concentration in Cybersecurity.\\*
+    \end{nospacetabbing}
+\end{resume_section}
+
+\vspace{-6\secsep}
 
 \begin{resume_section}{Projects}
-    \begin{resume_subsection}{August 2021 - Present}{Curated ICO}
-        \item After identifying a need in the cryptocurrency space, developing a data aggregation and analysis platform in a coordinated team environment to assist investors in discovering new but trustworthy cryptocurrencies.
-        \item Designed and deployed a PostgreSQL database paired with a correlating GraphQL API in order to store large collections of financial data and allow for their \textbf{retrieval in less than 100ms}.
-        \item Developed an automated data retrieval tool with a \textbf{runtime of 9.5ms} that fetches financial data on cryptocurrencies via APIs and inputs them into a database using a GraphQL API to perform historical analysis.
-    \end{resume_subsection}
-    \vspace{2\secsep}
-    \begin{resume_subsection}{February 2021}{To-Do Export - \faGitlab \hspace{0.01cm} \href{https://git.tayari.gg/tayari/Microsoft-To-Do-Export}{git.tayari.gg/tayari/Microsoft-To-Do-Export}}
-        \item Frustrated by a total lack of any export solutions for the Microsoft To-Do program, devised and developed a custom solution that exports all task lists into a format compatible with other task management applications.
-        \item Developed in Java and utilizes REST APIs to retrieve the task lists which are then converted into the appropriate CSV and JSON formats in order to ensure compatibility with other task management applications.
-    \end{resume_subsection}
-    \vspace{2\secsep}
-    \begin{resume_subsection}{December 2020 - Present}{Twitch Recover - \faGithub \hspace{0.01cm} \href{https://github.com/twitchrecover/twitchrecover}{github.com/twitchrecover/twitchrecover}}
-        \item Following a copyright restriction crisis on a popular live streaming platform, developed a tool that has \textbf{over 100,000+ downloads} that allows users to better manage and recover their video content.
-        \item Built in Java and utilizes REST and GraphQL APIs to retrieve and feed video content to end users.
-        \item \textbf{Resolved hundreds of user tickets}, performing the relevant support and issue remediation.
+%    \vspace{2\secsep}
+%    \begin{resume_subsection}{December 2021 - February 2022}{Nmap2Tex - \faGitlab \hspace{0.01cm} \href{https://git.tayari.gg/tayari/Nmap2Tex}{git.tayari.gg/tayari/Nmap2Tex}}
+%        \item Aggrieved by having to create particularly formatted network inventory and vulnerability reports for competitions, designed a tool which parses and uniquely handles scan outputs creating nicely formatted \LaTeX \hspace{0.01cm} reports.
+%        \item Implements the latest CVSS standard to sort and respectively colour code discovered vulnerabilities by severity.
+%        \item Allows for rapid understanding of the state of a network, each host, their services and any vulnerabilities.
+%    \end{resume_subsection}
+%   \begin{resume_subsection}{February 2021}{To-Do Export - \faGitlab \hspace{0.01cm} \href{https://git.tayari.gg/tayari/Microsoft-To-Do-Export}{git.tayari.gg/tayari/Microsoft-To-Do-Export}}
+%       \item Frustrated by a total lack of any export solutions for the Microsoft To-Do program, devised and developed a custom solution that exports all task lists into a format compatible with other task management applications.
+%       \item Developed in Java and utilizes REST APIs to retrieve the task lists which are then converted into the appropriate CSV and JSON formats in order to ensure compatibility with other task management applications.
+%   \end{resume_subsection}
+    \begin{resume_subsection}{December 2020 - Present}{Twitch Recover - \faGithub \hspace{0.01cm} {\hypersetup{urlcolor=black}\href{https://github.com/twitchrecover/twitchrecover}{github.com/twitchrecover/twitchrecover}}}
+        \item Following a copyright restriction crisis on a popular live streaming platform, developed a tool in Java utilizing REST and GraphQL APIs that has \textbf{over 600,000 downloads} to allow users to better manage and recover their video content.
+%        \item Built in \textbf{Java} and utilizes \textbf{REST and GraphQL APIs} to retrieve and feed video content to end users.
+%        \item \textbf{Resolved hundreds of user tickets}, performing the relevant support and issue remediation.
     \end{resume_subsection}
 %   \begin{resume_subsection}{October - November 2020}{Shadow Realm Bot}
 %       \begin{subitems}
@@ -189,25 +220,47 @@ urlcolor=MyDarkBlue}
 %    \end{resume_subsection}
 \end{resume_section}
 
-\vspace{2\secsep}
+\vspace{-1\secsep}
 
-\begin{resume_section}{Associations}
-    \begin{resume_employer}{Devilsec}{}{August 2020 - Present}
+\begin{resume_section}{Volunteering}
+    \begin{resume_employer_black}{Red Team - Western Regional Collegiate Cyber Defense Competition}{}{November 2023 - Present}
         \begin{subitems}
-        \item Competing in the national Collegiate Cyber Defense Competition completing service requests, performing incident response, hardening Linux machines and maintaining and deploying services. Achieved \textbf{third place} in the western regional CCDC finals.
+            \item Simulated real world threats by exploiting and compromising competitor systems, implementing persistence using C2 frameworks such as Cobalt Strike, Sliver, and Mythic, and exfiltrating trophy targets from the competitors' environments.
+            \item Created and executed widespread attacks against defending competitor teams ensuring equal distribution of attacks.
         \end{subitems}
-
-        \begin{resume_position}{Vice-President}{2022 - Present}
-            \item Vice-President of ASU's cybersecurity club (1,100 members), helping administer the club and it's assets and also implemented a new \textbf{organisation structure} for the staff allowing for a significant increase in output.
-            \item Responsible for the entire club's code base and cloud infrastructure and also manage their respective teams.
-            \item Deployed an entire cloud CTF infrastructure with in-house plugins which has been used to run numerous CTFs.
-        \end{resume_position}
-    \end{resume_employer}
-    \vspace{2\secsep}
-    \begin{resume_subsection}{August 2020 - Present}{ASU Linux User's Group (ASULUG)}
-%        \item Member of ASU's Linux User's Group with over 950 members which hosts events about Linux and open source.
-%        \item Assisted numerous students with performing tasks across a variety of Linux distributions and technologies.
-        \item Presented a talk on the Qubes operating system detailing in technical detail it's architecture and components. \href{https://tayari.gg/talks/qubes-technical-introduction/}{\faExternalLinkSquare*}
-    \end{resume_subsection}
+    \end{resume_employer_black}
+%    \begin{resume_employer}{DevilSec}{}{August 2020 - July 2023}
+%        \begin{resume_position}{National Collegiate Cyber Defense Competition Team}{October 2021 - July 2023}
+%            %\item \textbf{3$^{rd}$ place at the 2022 and 2023 WRCCDC regional finals.}
+%        \item Captained the team to a \textbf{second third place at the western regional CCDC finals}, including second place in the service requests category behind only Stanford.
+%        \item Managed, hardened, and deployed Linux and AWS systems and services in addition to performing incident response, helping the team achieve a \textbf{record third place at the WRCCDC finals}.
+%        \end{resume_position}
+%        \begin{resume_position}{President}{January 2023 - July 2023}
+%            \item President of ASU's cybersecurity club (1,100 members), helping administer the club and it's assets and also implemented a new \textbf{organisation structure} for the staff allowing for a significant increase in output.
+%            %\item Responsible for the entire club's code base and cloud infrastructure and also manage their respective teams.
+%        \end{resume_position}
+%
+%        \begin{resume_position}{Vice-President}{January 2022 - December 2022}
+%            \item Developed and deployed a collaborative cloud CTF infrastructure using Python and AWS in addition to designing and creating numerous CTF challenges and competitions.
+%            %\item Introduced numerous projects allowing members to gain experience working with various technologies in a structured development environment.
+%        \end{resume_position}
+%    \end{resume_employer}
+%    \vspace{2\secsep}
+%    \begin{resume_employer}{ASU Linux User's Group (ASULUG)}{}{August 2020 - July 2023}
+%        \begin{resume_position}{Treasurer}{August 2022 - July 2023}
+%            \begin{subitems}
+%                \item Organised guest speaker events and club collaborations 
+%            \end{subitems}
+%        \end{resume_position}
+%        \begin{subitems}
+%            \item Presented a talk on the Qubes operating system detailing in technical detail it's architecture and components. \href{https://tayari.gg/talks/qubes-technical-introduction/}{\faExternalLinkSquare*}
+%        \end{subitems}
+%%        \item Member of ASU's Linux User's Group with over 950 members which hosts events about Linux and open source.
+%%        \item Assisted numerous students with performing tasks across a variety of Linux distributions and technologies.
+%    \end{resume_employer}
 \end{resume_section}
+
+
+\vspace{-3\secsep}
+
 \end{document}
