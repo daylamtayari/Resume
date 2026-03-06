@@ -13,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{fontawesome5}
 \usepackage{xifthen}
+\usepackage{needspace}
 \usepackage{times}
 \hypersetup{breaklinks=true,%
 pagecolor=white,%
@@ -69,7 +70,7 @@ urlcolor=MyDarkBlue}
 }{\end{tabbing}\vspace{-1.2em}}
 
 \newenvironment{resume_section}[1]{
-  \filbreak
+  \needspace{4\baselineskip}
   \vspace{2\secsep}
   \textsc{\color{blue}\large#1}
   \lineunder
@@ -144,7 +145,7 @@ urlcolor=MyDarkBlue}
 \begin{resume_section}{Skills}
     \begin{nospacetabbing}
     \textbf{Languages:} \hspace{6.5em} \=Go, Python, Java, C++, JavaScript, SQL, HCL, Bash, HTML, CSS\\*
-    \textbf{Cloud \& Virtualisation:} \>AWS, Oracle Cloud, Terraform, Proxmox, Docker\\*
+    \textbf{Cloud \& Virtualisation:} \>AWS, Terraform, Proxmox, Docker\\*
     \textbf{Technologies:} \>Active Directory, GraphQL, MySQL, MariaDB, PostgreSQL, NodeJS, VoIP, SiP, TrueNAS\\*
     \textbf{Tooling:} \>Burp Suite, Sliver, Nuclei, Metasploit, Ghidra, Nessus, Semgrep, CloudFox, Wireshark\\*
     \textbf{Foreign Languages:} \>Fully bilingual in French and English\\*
@@ -189,36 +190,26 @@ urlcolor=MyDarkBlue}
     \end{nospacetabbing}
 \end{resume_section}
 
-\vspace{-6\secsep}
+\vspace{-2\secsep}
 
 \begin{resume_section}{Projects}
-%    \vspace{2\secsep}
-%    \begin{resume_subsection}{December 2021 - February 2022}{Nmap2Tex - \faGitlab \hspace{0.01cm} \href{https://git.tayari.gg/tayari/Nmap2Tex}{git.tayari.gg/tayari/Nmap2Tex}}
-%        \item Aggrieved by having to create particularly formatted network inventory and vulnerability reports for competitions, designed a tool which parses and uniquely handles scan outputs creating nicely formatted \LaTeX \hspace{0.01cm} reports.
-%        \item Implements the latest CVSS standard to sort and respectively colour code discovered vulnerabilities by severity.
-%        \item Allows for rapid understanding of the state of a network, each host, their services and any vulnerabilities.
-%    \end{resume_subsection}
-%   \begin{resume_subsection}{February 2021}{To-Do Export - \faGitlab \hspace{0.01cm} \href{https://git.tayari.gg/tayari/Microsoft-To-Do-Export}{git.tayari.gg/tayari/Microsoft-To-Do-Export}}
-%       \item Frustrated by a total lack of any export solutions for the Microsoft To-Do program, devised and developed a custom solution that exports all task lists into a format compatible with other task management applications.
-%       \item Developed in Java and utilizes REST APIs to retrieve the task lists which are then converted into the appropriate CSV and JSON formats in order to ensure compatibility with other task management applications.
-%   \end{resume_subsection}
-    \begin{resume_subsection}{December 2020 - Present}{Twitch Recover - \faGithub \hspace{0.01cm} {\hypersetup{urlcolor=black}\href{https://github.com/twitchrecover/twitchrecover}{github.com/twitchrecover/twitchrecover}}}
+    \begin{resume_subsection}{December 2025 -- Present}{Cierge -- \faGithub \hspace{0.01cm} {\hypersetup{urlcolor=black}\href{https://github.com/daylamtayari/Cierge}{github.com/daylamtayari/Cierge}}}
+        \item Built a \textbf{full-stack cloud-native platform} in \textbf{Go} that automatically books requested restaurant reservations for users as soon as they become available.
+        \item Leveraged \textbf{AWS EventBridge} to schedule time-optimized \textbf{AWS Lambda functions} that execute reservation bookings.
+        \item Implemented \textbf{wide-event logging} and \textbf{wrote two libraries} to collect log-worthy information throughout request flows.
+        \item Reverse-engineered and wrote the most-feature complete API library of the Resy platform.
+    \end{resume_subsection}
+    \vspace{8\secsep}
+    \begin{resume_subsection}{February 2021 -- Present}{Microsoft To-Do Export -- \faGithub \hspace{0.01cm} {\hypersetup{urlcolor=black}\href{https://github.com/daylamtayari/Microsoft-To-Do-Export}{github.com/daylamtayari/Microsoft-To-Do-Export}}}
+        \item Frustrated by a lack of any export solutions, devised and built a \textbf{Go} tool that exports all lists and tasks from Microsoft To-Do into formats supported for import into other popular task management programs.
+        \item Implemented numerous user feature requests for additional export formats and handling of additional data types.
+    \end{resume_subsection}
+    \vspace{2\secsep}
+    \begin{resume_subsection}{December 2020 -- Present}{Twitch Recover -- \faGithub \hspace{0.01cm} {\hypersetup{urlcolor=black}\href{https://github.com/twitchrecover/twitchrecover}{github.com/twitchrecover/twitchrecover}}}
         \item Following a copyright restriction crisis on a popular live streaming platform, developed a tool in Java utilizing REST and GraphQL APIs that has \textbf{over 600,000 downloads} to allow users to better manage and recover their video content.
-%        \item Built in \textbf{Java} and utilizes \textbf{REST and GraphQL APIs} to retrieve and feed video content to end users.
+        \item Built in \textbf{Java} and utilizes \textbf{REST and GraphQL APIs} to retrieve and feed video content to end users.
 %        \item \textbf{Resolved hundreds of user tickets}, performing the relevant support and issue remediation.
     \end{resume_subsection}
-%   \begin{resume_subsection}{October - November 2020}{Shadow Realm Bot}
-%       \begin{subitems}
-%            \item Following the removal of a popular moderation feature, created a livestreaming moderation bot which reimplements that feature allowing content creators to better moderate their communities.
-%           \item Developed a front end in ReactJS utilizing NodeJS packages paired with a SQL database backend.
-%           \item Implemented OAuth Authentication for user authentication paired with an API to retrieve the necessary user data and perform the moderation.
-%       \end{subitems}
-%   \end{resume_subsection}
-%   \vspace{2\secsep}
-%   \begin{resume_subsection}{March 2020 - Present}{Home Network and Security Lab}
-%        \item Continuously advance my skills with enterprise tools and vulnerabilities by \textbf{virtualizing multiple vulnerable environments} and practicing to deploy and configure a large variety of enterprise tools and solutions.
-%        \item Active on TryHackMe, an online platform with labs to practice and enrich my penetration testing skills.
-%    \end{resume_subsection}
 \end{resume_section}
 
 \vspace{-1\secsep}
@@ -229,39 +220,6 @@ urlcolor=MyDarkBlue}
             \item Simulated real world threats by exploiting and compromising competitor systems, implementing persistence using C2 frameworks such as Cobalt Strike, Sliver, and Mythic, and exfiltrating trophy targets from the competitors' environments.
             \item Created and executed widespread attacks against defending competitor teams ensuring equal distribution of attacks.
         \end{subitems}
-    \end{resume_employer_black}
-%    \begin{resume_employer}{DevilSec}{}{August 2020 - July 2023}
-%        \begin{resume_position}{National Collegiate Cyber Defense Competition Team}{October 2021 - July 2023}
-%            %\item \textbf{3$^{rd}$ place at the 2022 and 2023 WRCCDC regional finals.}
-%        \item Captained the team to a \textbf{second third place at the western regional CCDC finals}, including second place in the service requests category behind only Stanford.
-%        \item Managed, hardened, and deployed Linux and AWS systems and services in addition to performing incident response, helping the team achieve a \textbf{record third place at the WRCCDC finals}.
-%        \end{resume_position}
-%        \begin{resume_position}{President}{January 2023 - July 2023}
-%            \item President of ASU's cybersecurity club (1,100 members), helping administer the club and it's assets and also implemented a new \textbf{organisation structure} for the staff allowing for a significant increase in output.
-%            %\item Responsible for the entire club's code base and cloud infrastructure and also manage their respective teams.
-%        \end{resume_position}
-%
-%        \begin{resume_position}{Vice-President}{January 2022 - December 2022}
-%            \item Developed and deployed a collaborative cloud CTF infrastructure using Python and AWS in addition to designing and creating numerous CTF challenges and competitions.
-%            %\item Introduced numerous projects allowing members to gain experience working with various technologies in a structured development environment.
-%        \end{resume_position}
-%    \end{resume_employer}
-%    \vspace{2\secsep}
-%    \begin{resume_employer}{ASU Linux User's Group (ASULUG)}{}{August 2020 - July 2023}
-%        \begin{resume_position}{Treasurer}{August 2022 - July 2023}
-%            \begin{subitems}
-%                \item Organised guest speaker events and club collaborations 
-%            \end{subitems}
-%        \end{resume_position}
-%        \begin{subitems}
-%            \item Presented a talk on the Qubes operating system detailing in technical detail it's architecture and components. \href{https://tayari.gg/talks/qubes-technical-introduction/}{\faExternalLinkSquare*}
-%        \end{subitems}
-%%        \item Member of ASU's Linux User's Group with over 950 members which hosts events about Linux and open source.
-%%        \item Assisted numerous students with performing tasks across a variety of Linux distributions and technologies.
-%    \end{resume_employer}
 \end{resume_section}
-
-
-\vspace{-3\secsep}
 
 \end{document}
