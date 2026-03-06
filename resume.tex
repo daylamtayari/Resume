@@ -146,7 +146,7 @@ urlcolor=MyDarkBlue}
     \begin{nospacetabbing}
     \textbf{Languages:} \hspace{6.5em} \=Go, Python, Java, C++, JavaScript, SQL, HCL, Bash, HTML, CSS\\*
     \textbf{Cloud \& Virtualisation:} \>AWS, Terraform, Proxmox, Docker\\*
-    \textbf{Technologies:} \>Active Directory, GraphQL, MySQL, MariaDB, PostgreSQL, NodeJS, VoIP, SiP, TrueNAS\\*
+    \textbf{Technologies:} \>GraphQL, PostgreSQL, Active Directory, MySQL, NodeJS, VoIP, SiP\\*
     \textbf{Tooling:} \>Burp Suite, Sliver, Nuclei, Metasploit, Ghidra, Nessus, Semgrep, CloudFox, Wireshark\\*
     \textbf{Foreign Languages:} \>Fully bilingual in French and English\\*
     \textbf{Work Authorization:} \>United States permanent resident\\*
@@ -166,7 +166,7 @@ urlcolor=MyDarkBlue}
             \item Established \textbf{mentorships} with other consultants, \textbf{mentoring} them on \textbf{network penetration testing and tool development}.
         \end{resume_position}
         \begin{resume_position}{Security Consultant II}{November 2022 -- January 2024}
-                \item Conducted network and application penetration testing helping identify numerous critical and high severity issues across numerous Fortune 100 clients.
+                \item Conducted network and application penetration testing helping identify numerous critical and high severity issues across multiple Fortune 100 clients, providing remediation guidance to help fix vulnerabilities and improve their security posture.
                 \item Performed source code review of Go, Python, Java, and SQL applications finding vulnerabilities such as authentication, authorization, and injection issues.
                 \item \textbf{Built a new network security service line}, working with leadership and multiple teams to provide an offering that consistently identified new vulnerabilities and provided a more comprehensive evaluation of clients' networks.
                 \item \textbf{Developed 12 tools and libraries, primarily in Go}, that optimized consultants capabilities and integrated internal solutions, resulting in more time-efficient testing.
@@ -180,11 +180,12 @@ urlcolor=MyDarkBlue}
 \end{resume_section}
 
 
-\vspace{-1\secsep}
+\vspace{2\secsep}
 
 \begin{resume_section}{Certifications and Education}
     \begin{nospacetabbing}
-        \textbf{Certifications:} \hspace{6.5em} \=OffSec Certified Professional (\textbf{OSCP}), AWS Certified Security - Specialty (Exp. Dec 2028)\\* %AWS Cloud Practicioner (Exp. Jan 2027)\\*
+        \textbf{Certifications:} \hspace{6.5em} \=\textbf{OffSec Certified Professional (OSCP)}, \textbf{AWS Certified Security} - Specialty (Exp. Dec 2028), \\*
+        %\>AWS Cloud Practicioner (Exp. Jan 2027)\\*
         \textbf{Education:} \> Arizona State University (August 2020 -- July 2023)\\*
         \>Completed credits towards a B.S. in Computer Science with a concentration in Cybersecurity.\\*
     \end{nospacetabbing}
@@ -194,32 +195,33 @@ urlcolor=MyDarkBlue}
 
 \begin{resume_section}{Projects}
     \begin{resume_subsection}{December 2025 -- Present}{Cierge -- \faGithub \hspace{0.01cm} {\hypersetup{urlcolor=black}\href{https://github.com/daylamtayari/Cierge}{github.com/daylamtayari/Cierge}}}
-        \item Built a \textbf{full-stack cloud-native platform} in \textbf{Go} that automatically books requested restaurant reservations for users as soon as they become available.
+        \item Built a \textbf{full-stack cloud-native platform} in \textbf{Go} that automatically books requested restaurant reservations for users as soon as they become available, allowing friends and family to obtain hard-to-get restaurant reservations.
         \item Leveraged \textbf{AWS EventBridge} to schedule time-optimized \textbf{AWS Lambda functions} that execute reservation bookings.
-        \item Implemented \textbf{wide-event logging} and \textbf{wrote two libraries} to collect log-worthy information throughout request flows.
+        \item Implemented \textbf{wide-event logging} and \textbf{wrote two libraries} to aggregate related logs and database queries throughout request flows, providing comprehensive logs that can be used idenpendently to troubleshoot and identify performance trends.
         \item Reverse-engineered and wrote the most-feature complete API library of the Resy platform.
     \end{resume_subsection}
-    \vspace{8\secsep}
+    \vspace{2\secsep}
     \begin{resume_subsection}{February 2021 -- Present}{Microsoft To-Do Export -- \faGithub \hspace{0.01cm} {\hypersetup{urlcolor=black}\href{https://github.com/daylamtayari/Microsoft-To-Do-Export}{github.com/daylamtayari/Microsoft-To-Do-Export}}}
         \item Frustrated by a lack of any export solutions, devised and built a \textbf{Go} tool that exports all lists and tasks from Microsoft To-Do into formats supported for import into other popular task management programs.
         \item Implemented numerous user feature requests for additional export formats and handling of additional data types.
     \end{resume_subsection}
     \vspace{2\secsep}
-    \begin{resume_subsection}{December 2020 -- Present}{Twitch Recover -- \faGithub \hspace{0.01cm} {\hypersetup{urlcolor=black}\href{https://github.com/twitchrecover/twitchrecover}{github.com/twitchrecover/twitchrecover}}}
+    \begin{resume_subsection}{December 2020 -- Present}{Twitch Recover -- \faGithub \hspace{0.01cm} {\hypersetup{urlcolor=black}\href{https://github.com/twitchrecover/twitchrecover}{github.com/TwitchRecover/TwitchRecover}}}
         \item Following a copyright restriction crisis on a popular live streaming platform, developed a tool in Java utilizing REST and GraphQL APIs that has \textbf{over 600,000 downloads} to allow users to better manage and recover their video content.
         \item Built in \textbf{Java} and utilizes \textbf{REST and GraphQL APIs} to retrieve and feed video content to end users.
 %        \item \textbf{Resolved hundreds of user tickets}, performing the relevant support and issue remediation.
     \end{resume_subsection}
 \end{resume_section}
 
-\vspace{-1\secsep}
+\vspace{2\secsep}
 
 \begin{resume_section}{Volunteering}
     \begin{resume_employer_black}{Red Team -- Western Regional Collegiate Cyber Defense Competition}{}{November 2023 -- Present}
         \begin{subitems}
-            \item Simulated real world threats by exploiting and compromising competitor systems, implementing persistence using C2 frameworks such as Cobalt Strike, Sliver, and Mythic, and exfiltrating trophy targets from the competitors' environments.
-            \item Created and executed widespread attacks against defending competitor teams ensuring equal distribution of attacks.
+            \item Attack student-managed blue-teams to provide real-world threat experience, identifying and exploiting misconfigurations, implementing persistance, and exfiltrating designated trophy targets.
+            \item Devise a variety of automated persistence methods that must be resistent to the competition environment, from C2 frameworks such as \textbf{Cobalt Strike, Sliver, Mythic, and Realm}, to application backdoors, and compromised users.
         \end{subitems}
+    \end{resume_employer_black}
 \end{resume_section}
 
 \end{document}
